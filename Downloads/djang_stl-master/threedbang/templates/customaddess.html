@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Page title -->
+    <title>3D 방앗간</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load staticfiles %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
+</head>
+<body>
+
+
+
+<section id="services" class="section" style = "margin : 0px 0px 0px 0px ; padding : 0px 0px 0px 0px;">
+        <!-- Slide -->
+
+<div>
+    <div>
+        <div>
+
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">-->
+                    <!--<i class="fa fa-times"></i>-->
+                <!--</button>-->
+
+
+            <!--</div>-->
+
+
+            <div class="modal-body">
+                <div class="row">
+
+
+                    <!-- Contact Form -->
+                    <div class="col-md-12 contact-form">
+                        <form class="form" method="POST" action = "">
+                        {%csrf_token%}
+                                    <h3 style = "text-decoration:underline;">주문서 작성</h3><br>
+
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" id="id_name_user" name = "name_user" class="form-control" placeholder = "받으실분 성함">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" id="id_phone_number" name="phone_number" class="form-control" placeholder = "받으실분 전화번호">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <br><br>
+                                    <h4>받으실분 주소</h4><br>
+                                    <input type="text" id="sample6_postcode" class="form-control" placeholder="우편번호" style = "margin: 0px 20px 10px 0px;"><br>
+                                    <input type="button" class="btn btn-theme" onclick="sample6_execDaumPostcode()" style = "color :#817f7f ;margin : 0px 30px 10px 0px; " value="우편번호 찾기"><br><br>
+                                    <input type="text" id="id_address" name = "address" class="form-control" placeholder="주소" style = "margin: 0px 20px 0px 0px;"><br>
+                                    <input type="text" id="id_detail_address" name ="detail_address" class="form-control" placeholder="상세주소">
+
+                                    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+                                    <script>
+                                        function sample6_execDaumPostcode() {
+                                            new daum.Postcode({
+                                                oncomplete: function(data) {
+                                                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                                    var fullAddr = ''; // 최종 주소 변수
+                                                    var extraAddr = ''; // 조합형 주소 변수
+
+                                                    // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                                        fullAddr = data.roadAddress;
+
+                                                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                                        fullAddr = data.jibunAddress;
+                                                    }
+
+                                                    // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                                                    if(data.userSelectedType === 'R'){
+                                                        //법정동명이 있을 경우 추가한다.
+                                                        if(data.bname !== ''){
+                                                            extraAddr += data.bname;
+                                                        }
+                                                        // 건물명이 있을 경우 추가한다.
+                                                        if(data.buildingName !== ''){
+                                                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                                        }
+                                                        // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                                                        fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                                                    }
+
+                                                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                                    document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                                                    document.getElementById('id_address').value = fullAddr;
+
+                                                    // 커서를 상세주소 필드로 이동한다.
+                                                    document.getElementById('id_detail_address').focus();
+                                                }
+                                            }).open();
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12 text-center">
+                                     <button id = "paid1" type="submit" class="btn btn-theme"><i class="icon fa fa-fw fa-paper-plane-o"></i> <span class="text">주문서 작성 완료하기</span></button>
+
+
+                                </div></div>
+                        </form><br>
+                        </div>
+                    </div>
+                    <!-- /Contact Form -->
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal: /Get In Touch -->
+</section>
+
+
+<!-- /Header -->
+
+<!-- /Modal: Result Message -->
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+<script src="{% static 'js/general.js' %}"></script>
+
+
+<!-- /SCRIPTS -->
+</body>
+
+</html>

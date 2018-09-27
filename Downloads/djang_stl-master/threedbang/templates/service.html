@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Page title -->
+    <title>3D 방앗간</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load staticfiles %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+
+</head>
+<body>
+
+<!-- Preloader -->
+<!--<div id="preloader">-->
+    <!--<div class="loader"></div>-->
+<!--</div>-->
+<!-- /Preloader -->
+
+<!-- Header -->
+<header id="home" class="header">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="navbar affix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!-- Navigation Header -->
+                    <div class="navbar-header">
+
+                        <!-- Toggle Button -->
+                        <button type="button"
+                                class="navbar-toggle collapsed"
+                                data-toggle="collapse"
+                                data-target="#main-menu"
+                                aria-expanded="false"
+                                aria-controls="main-menu">
+
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+                        <!-- /Toggle Button -->
+
+                        <!-- Brand -->
+                        <a href="{% url 'bootstrap' %}" class="brand">
+
+                            <!-- Logo Big -->
+                            <div class="big">
+                               <span class="icon_cogs"></span> 3D 방앗간
+                            </div>
+                            <!-- /Logo Big -->
+
+                            <!-- Logo Small -->
+                            <div class="small">
+                                <span class="icon_cogs"></span>
+                            </div>
+                            <!-- /Logo Small -->
+
+                        </a>
+                        <!-- /Brand -->
+
+                    </div>
+                    <!-- /Navigation Header -->
+
+                    <!-- Navigation -->
+                    <div id="main-menu" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li><a class="smooth-scroll" href="{% url 'aboutus' %}">방앗간 소개</a></li>
+                            <li><a class="smooth-scroll" href="{% url 'service' %}">제공 서비스</a></li>
+
+                            <li><a class="smooth-scroll" href="{% url 'mypage' %}">나의 방앗간</a></li>
+                            <li><a class="smooth-scroll" href="{% url 'login' %}">로그인 하기</a></li>
+
+                          <!-- /Navigation -->
+
+                        </ul>
+                    </div>
+                    <!-- /Navigation -->
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- /Navigation -->
+
+    <!-- Slider -->
+    <div id="carousel-home" class="slider owl-carousel owl-theme">
+        <!-- Slide -->
+        <div class="item mask mask-black" style="background: url(/static/images/service.jpeg) ; no-repeat center top / cover;" data-stellar-background-ratio="0.4">
+            <div class="full-wh relative" data-stellar-ratio="0.5">
+                <div class="container" >
+                    <div class="col-md-6 col-md-offset-2 relative">
+                        <h1 class="animated fadeInDown wow" data-wow-delay="0.2s">Make Your Freedom</h1>
+                        <div class="subtitle animated fadeInUp wow" data-wow-duration="0.9s" data-wow-delay="0.5s">
+                              3d 방앗간은 <strong style = "text-decoration:underline">3d 모델링 설계 / 프린팅 출력 서비스</strong>를 통해<br> 여러분들의 상상을 현실로 제공해드리고자 합니다
+                        </div>
+                        <div class="animated fadeInUp wow" data-wow-delay="1.0s">
+                            <a  href="{% url 'mypage' %}" class="btn btn-rounded btn-white-o smooth-scroll">출력하러 가기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Slide -->
+
+        <!-- Slide -->
+
+        <!-- /Slide -->
+
+    </div>
+    <!-- /Slider -->
+
+</header>
+<!-- /Header -->
+
+<!-- Main -->
+<main class="main-container">
+
+
+
+    <!-- Section: Projects -->
+
+
+
+
+    <!-- /Trigger: Join -->
+
+    <!-- Section: Services -->
+    <section id="services" class="section">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <header class="text-center">
+                        <h2 class="section-title underline">Services</h2>
+                        <p class="section-subtitle">
+                            3d 방앗간에서는 다양한 방식의 <strong>3d 프린팅 출력 대행 서비스</strong>를 제공하고 있습니다. 모든 서비스는 실시간으로 모델에 대한 분석 및
+                            현재 출력 리스트에 맞춰 출력 시간과 견적을 <br>메일로 발송해드리며 <strong style = "text-decoration:underline;">업계 최저가</strong>를 보장해드립니다
+                        </p>
+                    </header>
+                </div>
+            </div>
+            <!-- /Section Header -->
+
+            <!-- Section Content -->
+            <div class="row section-content">
+
+                <!-- Service Block -->
+                <div class="service clearfix">
+
+                    <!-- Service Image -->
+                    <div class="col-sm-5 col-sm-offset-1 col-xs-12 hidden-xs animated fadeInLeft wow" data-wow-duration="1.5s">
+                        <div class="image">
+                            <img src="{% static 'images/devices.png' %}" alt="">
+                        </div>
+                    </div>
+                    <!-- /Service Image -->
+
+                    <!-- Service Description -->
+                    <div class="col-sm-5 col-xs-12 animated fadeIn wow" data-wow-duration="0.9s">
+                        <h3 class="title">&nbsp;&nbsp;SLA Printing Service</h3>
+                        <p class="description">
+                            &nbsp;&nbsp;&nbsp;레이저 방식으로 높은 정밀도 , 최대 0.05mm 얇은 막 , 별도의 후가공이 <br>&nbsp;&nbsp;&nbsp;필요없는 High Quality의
+                            아주 미세하고 , 작은 부품들에 적합합니다. <br>&nbsp;&nbsp;&nbsp;가격이 조금 높은 편입니다.<br>&nbsp;&nbsp;&nbsp;작은 크기의 출력물의 높은 해상도를 요구하는 모델에 적합합니다
+                        </p>
+                        <a href="{% url 'mypage' %}" class="btn btn-theme" style = "margin : 0px 0px 0px 14px; ">출력하러 가기</a>
+                    </div>
+                    <!-- /Service Description -->
+
+                </div>
+                <!-- /Service Block -->
+
+
+                <!-- Service Block -->
+                <div class="service clearfix">
+
+                    <!-- Service Description -->
+                    <div class="col-sm-5 col-sm-offset-1 col-xs-12 animated fadeIn wow" data-wow-duration="0.9s">
+                        <h3 class="title">&nbsp;&nbsp;&nbsp;&nbsp;FDM Service</h3>
+                        <p class="description">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;겹겹이 적층 방식으로 , 가격경쟁력이 우수하며 프린팅 시간이 빨라서 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가장 많이 쓰여집니다.
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;방앗간에는 가장 팬덤이미 많은 미국의 Makergear 사의 M2를 통해<br>&nbsp;&nbsp;&nbsp;&nbsp; 제공됩니다.
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp; 저렴한 가격,빠른 출력속도를 원하시는 분께 추천드립니다.
+                        </p>
+                        <a href="{% url 'mypage' %}" class="btn btn-theme" style = "margin:0px 0px 10px 14px;">출력하러 가기</a>
+                    </div>
+                    <!-- /Service Description -->
+
+                    <!-- Service Image -->
+                    <div class="col-sm-5 col-xs-12 hidden-xs animated fadeInRight wow" data-wow-duration="1.5s">
+                        <div class="image">
+                            <img src="{% static 'images/frontend.png' %}" alt="">
+                        </div>
+                    </div>
+                    <!-- /Service Image -->
+
+                </div>
+                <!-- /Service Block -->
+
+                <!-- Service Block -->
+                <div class="service clearfix">
+
+                    <!-- Service Image -->
+                    <div class="col-sm-5 col-sm-offset-1 col-xs-12 hidden-xs animated fadeInLeft wow" data-wow-duration="1.5s">
+                        <div class="image">
+                            <img src="{% static 'images/plot.png' %}" alt="">
+                        </div>
+                    </div>
+                    <!-- /Service Image -->
+
+                    <!-- Service Description -->
+                    <div class="col-sm-5 col-xs-12 animated fadeIn wow" data-wow-duration="0.9s">
+                        <h3 class="title">&nbsp;&nbsp;&nbsp;Free Printing Service!!</h3>
+                        <p class="description">
+                            &nbsp;&nbsp;&nbsp;저렴한 FDM 방식의 , 재료비는 방앗간에서 냅니다. 주머니 사정이 가벼<br>&nbsp;&nbsp;&nbsp;운 분들을 위해
+                            빠르게 모델을 제작전 검증해보고 싶은 분들에게 <br>&nbsp;&nbsp;&nbsp;추천드립니다.
+                        </p>
+                        <a href="{% url 'mypage' %}" class="btn btn-theme" style = "margin : 0px 0px 0px 14px; ">출력하러 가기</a>
+                    </div>
+                    <!-- /Service Description -->
+
+                </div>
+                <!-- /Service Block -->
+
+            </div>
+            <!-- /Section Content -->
+
+        </div>
+    </section>
+    <!-- /Section: Services -->
+
+
+
+
+
+
+    <section id="price" class="section bg-theme">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <header class="text-center">
+                        <h2 class="section-title underline text-white">엔지니어링 서비스</h2>
+                        <p class="section-subtitle text-white">
+                            방앗간은 대기업 연구소 출신 엔지니어들과 디자이너로 이뤄진 <br>전문적인 엔지니어링 & 디자인 기업입니다.방앗간에서는 프린팅 서비스 이외의 <br>기구설계 / 3D,2D 디자인 / PCB 설계등의 엔지니어링 서비스도 제공합니다
+                        </p><br>
+                        <p class="section-subtitle text-white">
+                            해당 서비스는 준비중이므로 필요하신 분은 <strong style = "text-decoration:underline;">아래 메일 주소</strong>로 연락 바랍니다.
+                        </p>
+
+                    </header>
+                </div>
+            </div>
+            <!-- /Section Header -->
+
+            <!-- Section Content -->
+            <div class="row section-content">
+
+                <!-- Plan -->
+                <div class="col-md-3 col-sm-6 animated fadeIn wow" data-wow-duration="0.9s">
+                    <div class="plan">
+
+                        <div class="price">
+                            <span class="dollar">3D Modeling</span>
+                        </div>
+
+                        <h3 class="name text-center">기구설계</h3>
+
+                        <ul class="features">
+                            <li>간단한 3D 모델 구현</li>
+                            <li>구조해석 기반 내구성 개선 설계</li>
+                            <li>복잡한 3D 형상 구현</li>
+                            <li>웨어러블 디바이스 상세 구조</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-theme"><i class="icon fa fa-fw fa-check"></i> <span class="text">준비중입니다.</span></a>
+
+                    </div>
+                </div>
+                <!-- /Plan -->
+
+                <!-- Plan -->
+                <div class="col-md-3 col-sm-6 animated fadeIn wow" data-wow-duration="0.9s" data-wow-delay="0.2s">
+                    <div class="plan">
+
+                        <div class="price">
+                            <span class="dollar">Design</span>
+                        </div>
+
+                        <h3 class="name text-center">2D,3D 디자인</h3>
+
+                        <ul class="features">
+                            <li>2D 랜더링</li>
+                            <li>3D 모델링 디자인</li>
+                            <li>UI/UX 디자인</li>
+                            <li>제품 컨셉 모델링</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-theme"><i class="icon fa fa-fw fa-check"></i> <span class="text">준비중입니다.</span></a>
+
+                    </div>
+                </div>
+                <!-- /Plan -->
+
+                <!-- Plan -->
+                <div class="col-md-3 col-sm-6 animated bounceIn wow" data-wow-duration="0.9s" data-wow-delay="0.6s">
+                    <div class="plan">
+
+                        <div class="price">
+                            <span class="dollar">PCB</span>
+                        </div>
+
+                        <h3 class="name text-center">제작 및 설</h3>
+
+                        <ul class="features">
+                            <li>회로설계</li>
+                            <li>Artwork</li>
+                            <li>펌웨어 기능개발</li>
+                            <li>Sample PCB제작</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-theme"><i class="icon fa fa-fw fa-check"></i> <span class="text">준비중입니다.</span></a>
+
+                    </div>
+                </div>
+                <!-- /Plan -->
+
+                <!-- Plan -->
+                <div class="col-md-3 col-sm-6 animated fadeIn wow" data-wow-duration="0.9s" data-wow-delay="0.4s">
+                    <div class="plan">
+
+                        <div class="price">
+                            <span class="dollar">AI(인공지능)</span>
+                        </div>
+
+                        <h3 class="name text-center">Advanced</h3>
+
+                        <ul class="features">
+                            <li>인공지능 알고리즘 개발</li>
+                            <li>파이썬 업무자동화 프로그램 개발</li>
+                            <li>비트코인 자동거래매매 프로그램 개발</li>
+                            <li>딥러닝 기반 토탈 솔루션 제공</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-theme"><i class="icon fa fa-fw fa-check"></i> <span class="text">준비중입니다.</span></a>
+
+                    </div>
+                </div>
+                <!-- /Plan -->
+
+            </div>
+            <!-- /Section Content -->
+
+        </div>
+    </section>
+
+
+
+    <!-- Section: Contact Information -->
+    <section id="contact-information" class="section section-small no-pb bg-dark">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row" style="display: none;">
+                <div class="col-md-6 col-md-offset-3">
+                    <header class="text-center">
+                        <h2 class="section-title underline">Contact Information</h2>
+                        <p class="section-subtitle">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                            alteration in some form, by injected humour.
+                        </p>
+                    </header>
+                </div>
+            </div>
+            <!-- /Section Header -->
+
+
+         <!-- Section Content -->
+            <div class="row animated fadeIn wow" data-wow-duration="0.9s">
+                <div class="col-md-10 col-md-offset-2 col-sm-12">
+                    <div class="row">
+
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="media contact">
+                                <div class="media-left">
+                                    <span class="icon icon_map_alt"></span>
+                                </div>
+                                <div class="media-body info h5">
+                                    <span>Our Address</span>
+                                    서울시 강동구 천호대로 1106 <br>sk허브 205호
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="media contact">
+                                <div class="media-left">
+                                    <span class="icon icon_mail_alt"></span>
+                                </div>
+                                <div class="media-body info h5">
+                                    <span>E-mail</span>
+                                    <a href="mailto:custom.3dbang@gmail.com" style ="color:white">custom.3dbang@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="media contact">
+                                <div class="media-left">
+                                    <i class="icon icon_mobile"></i>
+                                </div>
+                                <div class="media-body info h5">
+                                    <span>Phone Number</span>
+                                    070 7797 0528
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Section Content -->
+
+        </div>
+    </section>
+
+
+            </div>
+            <!-- /Section Content -->
+
+        </div>
+    </section>
+    <!-- /Section: Contact -->
+
+</main>
+<!-- /Main -->
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="footer section section-small no-pb bg-light-gray">
+    <div class="container">
+        <div class="row">
+
+            <!-- Footer Column -->
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-col">
+
+                <!-- Footer Logo -->
+                <div class="logo">
+                    <span class="icon_cogs"></span> 3D 방앗간
+                </div>
+                <!-- /Footer Logo -->
+
+                <!-- Footer Text -->
+                <p class="text">
+                    3D 프린팅으로 고객님의 상상을 현실로 만들어 <br>주는 기업을 지향하는 스타트업입니다.
+                </p>
+                <!-- /Footer Text -->
+
+                <!-- Footer Social -->
+                <ul class="social-inline">
+                    <li><a href="https://www.facebook.com/3d-%ED%94%84%EB%A6%B0%ED%8A%B8%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83-3D%EB%B0%A9%EC%95%97%EA%B0%84-2177860285561082/" class="fa fa-fw fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-fw fa-instagram"></a></li>
+
+                    <li><a href="#" class="fa fa-fw fa-pinterest"></a></li>
+                </ul>
+                <!-- /Footer Social -->
+
+            </div>
+
+            <!-- Footer Column -->
+            <div class="col-md-2 col-sm-6 col-xs-12 footer-col">
+                <br>
+                <h4 class="title">Site Menu</h4>
+
+                <!-- Footer Menu -->
+                <ul class="menu">
+                    <li><a href="{% url 'bootstrap' %}">홈</a></li>
+                    <li><a href="{% url 'aboutus' %}">방앗간 소개</a></li>
+                    <li><a href="{% url 'service' %}">다양한 서비스</a></li>
+                    <li><a href="{% url 'mypage' %}">나의 방앗간</a></li>
+                    <li><a href="{% url 'login' %}">로그인 하기</a></li>
+                </ul>
+                <!-- /Footer Menu -->
+
+            </div>
+
+                <br>
+                <div class="tags">
+                    <a href="#" class="tag">3d model</a>
+                    <a href="#" class="tag">design</a>
+                    <a href="#" class="tag">shape</a>
+                    <a href="#" class="tag">engineering</a>
+                    <a href="#" class="tag">3d printer</a>
+                    <a href="#" class="tag">fdm</a>
+                    <a href="#" class="tag">sla</a>
+                    <a href="#" class="tag">Makergear</a>
+                    <a href="#" class="tag">Formlabs</a>
+                    <a href="#" class="tag">PCB</a>
+                    <a href="#" class="tag">Artwork</a>
+                    <a href="#" class="tag">Machinelearning</a>
+                    <a href="#" class="tag">Artificial Intelligence</a>
+                    <a href="#" class="tag">Tensorflow</a>
+                    <a href="#" class="tag">Python</a>
+                    <a href="#" class="tag">Django</a>
+
+
+
+                </div>
+                <!-- /Footer Tags -->
+
+            </div>
+            <!-- /Footer Column -->
+
+        </div>
+
+    </div>
+
+    <div class="bottom-line bg-dark">
+        <div class="container">
+            <div class="row">
+
+                <!-- Copyright -->
+                <div class="col-md-4 col-sm-12">
+                    <p class="copyright">
+                        Copyright &copy; 2017 <strong>3d 방앗간</strong>
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <p class="copyright">
+                        사업자등록번호 468-25-00548 대표:설재환
+                </div>
+                <!-- /Copyright -->
+
+                <!-- Footer Social -->
+                <div class="col-md-4 col-sm-12">
+                    <div class="links">
+                        <a  href="{% url 'information' %}">Information</a>
+                        <a  href="{% url 'regulation' %}">이용약관</a>
+                        <a  href="{% url 'privacy' %}">개인정보제공 정책 </a>
+                    </div>
+                </div>
+                <!-- /Footer Social -->
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /Footer -->
+
+
+<!-- Scroll To Top -->
+<div id="scroll-to-top" class="scroll-to-top">
+    <i class="icon fa fa-angle-up"></i>
+</div>
+<!-- /Scroll To Top -->
+
+<!-- SCRIPTS -->
+<script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+<script src="{% static 'js/general.js' %}"></script>
+<!-- /SCRIPTS -->
+
+</body>
+</html>
